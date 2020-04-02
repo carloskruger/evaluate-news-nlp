@@ -45,24 +45,23 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-// app.post('/aylien', function(req,res){
-//     // textapi.sentiment({url:req.body.url,'mode':document}, (error,response)=>{
-//         textapi.sentiment({url:'https://nypost.com/2020/03/31/newhouse-family-buys-ironman-company-for-730m-cash/','mode':document}, (error,response)=>{
-//         if(error==null){
-//             aylienResponse={
-//                 "polarity":response.polarity,
-//                 "subjectivity":response.subjectivity,
-//                 "text":response.text,
-//                 "polarity_confidence":response.polarity_confidence,
-//                 "subjectivity_confidence":response.subjectivity_confidence
-//             }
-//             res.send(aylienResponse);
-//             console.log(aylienResponse);
-//         }
-//         else{
-//             console.log("Error",error);
-//         }
-//     })
-// })
+app.post('/aylien', function(req,res){
+         textapi.sentiment({'url':req.body.url,'mode':document}, (error,response)=>{
+         if(error==null){
+             aylienResponse={
+                 "polarity":response.polarity,
+                 "subjectivity":response.subjectivity,
+                 "text":response.text,
+                 "polarity_confidence":response.polarity_confidence,
+                 "subjectivity_confidence":response.subjectivity_confidence
+             }
+             res.send(aylienResponse);
+             console.log(aylienResponse);
+         }
+         else{
+             console.log("Error",error);
+         }
+     })
+ })
 
 
