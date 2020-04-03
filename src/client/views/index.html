@@ -3,11 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-        <!-- <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css"> -->
+    
     </head>
 
     <body>
@@ -31,22 +27,32 @@
             <section>
 
             <section>
-                <!-- <strong>Form Results:</strong>
-                <div id="results"></div> -->
-                <strong>Polarity:</strong>
-                <div id="polarity"></div>
-                <strong>Subjectivity:</strong>
-                <div id="subjectivity"></div>
-                <strong>Polarity Confidence:</strong>
-                <div id="polar-conf"></div>
-                <strong>Subjectivity Confidence:</strong>
-                <div id="subj-conf"></div>
+            
+                <h3> Polarity: </div> </h3>
+                <div id="polarity"></div><br>
+                <p>Subjectivity:</p>
+                <div id="subjectivity"></div><br>
+                <p>Polarity Confidence:</p>
+                <div id="polar-conf"></div><br>
+                <p>Subjectivity Confidence:</p>
+                <div id="subj-conf"></div><br>
+                <div id="message-area"></div>
+        
+
+
             </section>
         </main>
 
         <footer>
             <p>This is a footer</p>
         </footer>
-
+        <script>
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>

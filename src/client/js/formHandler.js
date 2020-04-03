@@ -23,7 +23,11 @@ function  handleSubmit(event) {
         document.getElementById('subj-conf').innerHTML = res.subjectivity_confidence
     })
     }
-
+    else {
+        alert("Bad URL")
+        console.log("Bad URL")
+        document.getElementById('message-area').innerText = "URL not properly formatted";
+    }
     // console.log("::: Form Submitted :::")
     // fetch('http://localhost:8081/test')
     // .then(res => res.json())

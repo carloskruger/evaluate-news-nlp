@@ -46,8 +46,11 @@ app.get('/test', function (req, res) {
 })
 
 app.post('/aylien', function(req,res){
-         textapi.sentiment({'url':req.body.url,'mode':document}, (error,response)=>{
+         console.log(req.body)
+         if (textapi) {
+         textapi.sentiment({'url':req.body.url}, (error,response)=>{
          if(error==null){
+             console.log(response)
              aylienResponse={
                  "polarity":response.polarity,
                  "subjectivity":response.subjectivity,
@@ -62,6 +65,7 @@ app.post('/aylien', function(req,res){
              console.log("Error",error);
          }
      })
+    }
  })
 
 

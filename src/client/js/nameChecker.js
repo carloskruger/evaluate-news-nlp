@@ -22,6 +22,9 @@ function checkForName(inputText) {
         else
         {
           return false;
+          console.log("bad URL")
+          document.getElementById('message-area').innerText = "URL not properly formatted";
+
         }
 // }
 
